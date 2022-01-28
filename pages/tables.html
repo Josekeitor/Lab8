@@ -109,7 +109,7 @@
   function loadReservations() {
 
     let request = {
-      url: `http://localhost:${port}/api/tables`,
+      url: `/api/tables`,
       method: "GET",
       success: function(response){
         console.log("Got reservation data");
@@ -152,7 +152,7 @@
   function loadWaitList() {
 
     let request = {
-      url: `http://localhost:${port}/api/waitlist`,
+      url: `/api/waitlist`,
       method: "GET",
       success: function(response){
         console.log("Got waitlist data");

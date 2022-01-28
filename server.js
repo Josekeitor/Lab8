@@ -6,7 +6,8 @@ var port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+// For demo purposes, I added these 4 objects, so that you can create 2 reservations and watch a successful one and
+// the second one gets put on the waitlist :)
 var reservations = [
   {
     name: "José Carlos",
@@ -63,7 +64,7 @@ app.get("/api/waitlist", (req, res) => {
 
 app.post("/api/tables", (req, res) => {
   console.log("Received: ", req.body);
-  console.log("Current capacity: ", currentCapacity);
+
   let newReservation = req.body;
   if (currentCapacity < maxCapacity) {
     currentCapacity++;
@@ -80,6 +81,7 @@ app.post("/api/tables", (req, res) => {
         "We are sorry, there are no tables available, you have been added to our waitlist",
     });
   }
+  console.log("Current capacity: ", currentCapacity);
 });
 
 app.post("/api/clear", (req, res) => {
