@@ -13,25 +13,21 @@ var reservations = [
     name: "José Carlos",
     phoneNumber: 18004144444,
     email: "some@email.com",
-    uid: 12345,
   },
   {
     name: "José Carlos",
     phoneNumber: 18004144444,
     email: "some@email.com",
-    uid: 12345,
   },
   {
     name: "José Carlos",
     phoneNumber: 18004144444,
     email: "some@email.com",
-    uid: 12345,
   },
   {
     name: "José Carlos",
     phoneNumber: 18004144444,
     email: "some@email.com",
-    uid: 12345,
   },
 ];
 

@@ -58,10 +58,7 @@
                 <label for="reserve-email">Email</label>
                 <input type="email" class="form-control" id="reserve-email" required>
               </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id"  pattern="[0-9]{5}" required>
-              </div>
+
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
@@ -95,18 +92,15 @@
       let name = $("#reserve-name")
       let phone = $("#reserve-phone")
       let email = $("#reserve-email")
-      let uid = $("#reserve-unique-id")
 
       let newReservation = {
         name: name.val().trim(),
         phoneNumber: phone.val().trim(),
         email: email.val().trim(),
-        uid: uid.val().trim()
       }
 
       $.post("/api/tables", newReservation).then(
               function (data) {
-                uid.val("")
                 email.val("")
                 name.val("")
                 phone.val("")

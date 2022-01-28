@@ -85,19 +85,23 @@
     reservations.forEach(populateReservation);
   }
 
-  function populateReservation(reservation) {
+  function populateReservation(reservation, index) {
     let tables = $("#tableList");
 
 
     let container = $("<li>");
-    let name = $("<h2>");
+    let table = $("<h1>");
+    let name = $("<h3>");
     let phone = $("<p>");
     let email = $("<p>");
 
-    name.text(`${reservation.name} - ${reservation.uid}`);
+    table.text(`Table ${index}`)
+    name.text(`${reservation.name}`);
     phone.text(`Phone number: ${reservation.phoneNumber}`);
     email.text(`Email: ${reservation.email}`);
 
+    container.append(table);
+    container.append($("<hr>"));
     container.append(name);
     container.append(phone);
     container.append(email);
@@ -128,16 +132,15 @@
     waitList.forEach(populateWaitListItem);
   }
 
-  function populateWaitListItem(waitListItem) {
+  function populateWaitListItem(waitListItem, index) {
     let waitList = $("#waitList");
-
 
     let container = $("<li>");
     let name = $("<h2>");
     let phone = $("<p>");
     let email = $("<p>");
 
-    name.text(`${waitListItem.name} - ${waitListItem.uid}`);
+    name.text(`${waitListItem.name}`);
     phone.text(`Phone number: ${waitListItem.phoneNumber}`);
     email.text(`Email: ${waitListItem.email}`);
 
